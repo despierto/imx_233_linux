@@ -22,10 +22,11 @@ Features
 - SPDIF
 
 External memory interface:
-1.8V mDDR, DDR1 w/2.5V regulator
-Hardware BCH (up to 20-bit correction) and RS ECC8
-NAND Flash support for SLC/MLC and managed NAND
-This product is included in Freescale’s product longevity program, with assured supply for a minimum of 10 years after launch
+- 1.8V mDDR, DDR1 w/2.5V regulator
+- Hardware BCH (up to 20-bit correction) and RS ECC8
+- NAND Flash support for SLC/MLC and managed NAND
+
+This product is included in Freescale’s product longevity program, with assured supply for a minimum of 10 years after launch.
 
 ===========
 Supported varsions:
