@@ -1,0 +1,18 @@
+#!/bin/sh
+
+cd ../../buildroot-2010.02
+./make_rootfs
+cd ../2.6.31/linux-2.6.31
+
+#make -j3 ARCH=arm CROSS_COMPILE=arm-unknown-linux-gnueabi-
+#make ARCH=arm CROSS_COMPILE=arm-unknown-linux-gnueabi- modules_install
+make -j2 ARCH=arm CROSS_COMPILE=/opt/freescale/usr/local/gcc-4.1.2-glibc-2.5-nptl-3/arm-none-linux-gnueabi/bin/arm-none-linux-gnueabi-
+#make ARCH=arm CROSS_COMPILE=/opt/freescale/usr/local/gcc-4.1.2-glibc-2.5-nptl-3/arm-none-linux-gnueabi/bin/arm-none-linux-gnueabi- modules_install
+cp arch/arm/boot/zImage zImage
+
+./mkimage -A arm -O linux -C none -T kernel -a 40400000 -e 40400000 -n linux-2.6 -d arch/arm/boot/zImage zlinux
+cp zlinux /tftpboot
+
+./elftosb2 -z -c ./imx233_linux.db -o linux.sb
+cp linux.sb /tftpboot
+cp zImage /tftpboot

@@ -30,4 +30,4 @@ This product is included in Freescale’s product longevity program, with assure
 
 ===========
 Supported varsions:
-- linux-2.6.28  (current build: kernel & ramfs)
+- linux-2.6.31  (current build: kernel & ramfs)
